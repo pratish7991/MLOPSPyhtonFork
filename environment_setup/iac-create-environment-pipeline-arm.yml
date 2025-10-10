@@ -1,4 +1,4 @@
-# CI/PR Pipeline that deploys an ARM template to create or update the resources needed by the other pipelines.
+# CI/PR Pipeline that deploys an ARM template to create or update resources needed by the other pipelines.
 trigger:
   branches:
     include:
@@ -6,6 +6,7 @@ trigger:
   paths:
     include:
       - environment_setup/arm-templates/*
+
 pr:
   branches:
     include:
@@ -14,12 +15,13 @@ pr:
     include:
       - environment_setup/arm-templates/*
 
+# 👇 Replace the vmImage with your own pool name
 pool:
-  vmImage: "ubuntu-latest"
+  name: my-personal-computer
 
 variables:
   - group: devopsforai-aml-vg
-  - name: WORKSPACE_SKU # https://docs.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-ml#sku
+  - name: WORKSPACE_SKU
     value: basic
 
 steps:
