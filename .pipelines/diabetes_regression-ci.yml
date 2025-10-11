@@ -22,7 +22,7 @@ variables:
 - group: devopsforai-aml-vg
 
 pool:
-  vmImage: ubuntu-latest
+  name: my-personal-computer
 
 stages:
 - stage: 'Model_CI'
