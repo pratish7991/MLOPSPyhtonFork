@@ -17,7 +17,7 @@ pr:
 
 # 👇 Replace the vmImage with your own pool name
 pool:
-  name: my-personal-computer
+  vmImage: ubuntu-latest
 
 variables:
   - group: devopsforai-aml-vg
